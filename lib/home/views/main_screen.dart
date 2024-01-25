@@ -90,6 +90,47 @@ class MainScreen extends StatelessWidget {
                     transform: const GradientRotation(pi / 4),
                   ),
                   borderRadius: BorderRadius.circular(25)),
+              child: Column(children: [
+                const Text(
+                  'Totalni balans',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const Text('BAM 2100,00'),
+                Row(
+                  children: [
+                    Row(
+                      children: [
+                        Container(
+                          width: 20,
+                          height: 20,
+                          decoration: const BoxDecoration(
+                              color: Colors.white30, shape: BoxShape.circle),
+                          child: const Center(
+                            child: Icon(
+                              CupertinoIcons.arrow_down,
+                              size: 13,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 9,
+                        ),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Prihodi'),
+                            Text('BAM 2500,00'),
+                          ],
+                        )
+                      ],
+                    )
+                  ],
+                )
+              ]),
             ),
           ],
         ),
