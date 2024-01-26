@@ -123,7 +123,7 @@ class MainScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('Prihodi'),
-                            Text('BAM 2500,00'),
+                            Text('BAM 3000,00'),
                           ],
                         )
                       ],
