@@ -190,7 +190,7 @@ class MainScreen extends StatelessWidget {
                                     'Rashodi',
                                     style: TextStyle(
                                         fontSize: 14,
-                                        color: Colors.red,
+                                        color: Colors.white,
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
@@ -262,10 +262,7 @@ class MainScreen extends StatelessWidget {
                                         shape: BoxShape.circle,
                                       ),
                                     ),
-                                    const Icon(
-                                      Icons.food_bank,
-                                      color: Colors.white,
-                                    )
+                                    transactionsData[i]['icon'],
                                   ],
                                 ),
                                 const SizedBox(
