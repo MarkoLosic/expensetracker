@@ -208,6 +208,98 @@ class MainScreen extends StatelessWidget {
                     )
                   ]),
             ),
+            //Here is end of the first part (The credit card)
+            const SizedBox(height: 40),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Transakcije',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Theme.of(context).colorScheme.onBackground,
+                      fontWeight: FontWeight.bold),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Text(
+                    'Pogledaj sve',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Theme.of(context).colorScheme.outline,
+                        fontWeight: FontWeight.w400),
+                  ),
+                )
+              ],
+            ),
+            //New screen when user click on Pogledaj sve
+            const SizedBox(height: 20),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 3,
+                  itemBuilder: (context, int i) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(12)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.yellow,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  width: 12,
+                                ),
+                                Text(
+                                  'Hrana',
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onBackground,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ]),
+                              Column(
+                                children: [
+                                  Text(
+                                    '-BAM45',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onBackground,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                  Text(
+                                    'Danas',
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outline,
+                                        fontWeight: FontWeight.w400),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+            )
           ],
         ),
       ),
