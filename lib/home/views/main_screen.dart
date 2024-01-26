@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:expensetracker/data/data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -236,7 +237,7 @@ class MainScreen extends StatelessWidget {
             const SizedBox(height: 20),
             Expanded(
               child: ListView.builder(
-                  itemCount: 9,
+                  itemCount: transactionsData.length,
                   itemBuilder: (context, int i) {
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 16.0),
@@ -257,7 +258,7 @@ class MainScreen extends StatelessWidget {
                                       width: 50,
                                       height: 50,
                                       decoration: BoxDecoration(
-                                        color: Colors.yellow[700],
+                                        color: transactionsData[i]['color'],
                                         shape: BoxShape.circle,
                                       ),
                                     ),
@@ -271,7 +272,7 @@ class MainScreen extends StatelessWidget {
                                   width: 12,
                                 ),
                                 Text(
-                                  'Hrana',
+                                  transactionsData[i]['name'],
                                   style: TextStyle(
                                       fontSize: 14,
                                       color: Theme.of(context)
@@ -283,7 +284,7 @@ class MainScreen extends StatelessWidget {
                               Column(
                                 children: [
                                   Text(
-                                    '-BAM45',
+                                    transactionsData[i]['totalAmount'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
@@ -292,7 +293,7 @@ class MainScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
-                                    'Danas',
+                                    transactionsData[i]['date'],
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Theme.of(context)
