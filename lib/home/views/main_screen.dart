@@ -112,7 +112,7 @@ class MainScreen extends StatelessWidget {
                       height: 12,
                     ),
                     const Text(
-                      'BAM 2100,00',
+                      'BAM 3000,00',
                       style: TextStyle(
                           fontSize: 40,
                           color: Colors.white,
@@ -154,7 +154,7 @@ class MainScreen extends StatelessWidget {
                                         fontWeight: FontWeight.w400),
                                   ),
                                   Text(
-                                    'BAM 3000,00',
+                                    'BAM 4000,00',
                                     style: TextStyle(
                                         fontSize: 14,
                                         color: Colors.white,
