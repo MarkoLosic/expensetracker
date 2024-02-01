@@ -96,7 +96,7 @@ class _MyChartState extends State<MyChart> {
     );
     Widget text;
 //With these code we are building axis and number fields
-    switch (value.toInt) {
+    switch (value.toInt()) {
       case 0:
         text = const Text(
           '01',
