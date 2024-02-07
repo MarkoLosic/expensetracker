@@ -71,6 +71,9 @@ class _AddExpenseState extends State<AddExpense> {
             //This is input field for categories
             TextFormField(
               controller: categoryController,
+              textAlignVertical: TextAlignVertical.center,
+              readOnly: true,
+              onTap: () {},
               decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -79,9 +82,67 @@ class _AddExpenseState extends State<AddExpense> {
                     size: 16,
                     color: Colors.grey,
                   ),
+                  //This is add new category button and modal dialog
                   suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (ctx) {
+                              return AlertDialog(
+                                title: const Text('Kreiraj novu kategoriju'),
+                                content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      TextFormField(
+                                        //controller: dateController,
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            hintText: 'Ime',
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                borderSide: BorderSide.none)),
+                                      ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      TextFormField(
+                                        //controller: dateController,
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            hintText: 'Izaberi ikonu',
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                borderSide: BorderSide.none)),
+                                      ),
+                                      const SizedBox(
+                                        height: 16,
+                                      ),
+                                      TextFormField(
+                                        //controller: dateController,
+                                        textAlignVertical:
+                                            TextAlignVertical.center,
+                                        decoration: InputDecoration(
+                                            filled: true,
+                                            fillColor: Colors.white,
+                                            hintText: 'Izaberi boju',
+                                            border: OutlineInputBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(30),
+                                                borderSide: BorderSide.none)),
+                                      ),
+                                    ]),
+                              );
+                            });
+                      },
+                      icon: const Icon(
                         FontAwesomeIcons.plus,
                         size: 16,
                         color: Colors.grey,
