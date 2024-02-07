@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 
 class AddExpense extends StatefulWidget {
   const AddExpense({super.key});
@@ -12,6 +13,14 @@ class _AddExpenseState extends State<AddExpense> {
   TextEditingController expenseController = TextEditingController();
   TextEditingController categoryController = TextEditingController();
   TextEditingController dateController = TextEditingController();
+
+//Adding format for the time so it copuld be automaticly seted
+
+  @override
+  void initState() {
+    dateController.text = DateFormat('dd/MM/yyyy').format(DateTime.now());
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,12 +91,19 @@ class _AddExpenseState extends State<AddExpense> {
               controller: dateController,
               textAlignVertical: TextAlignVertical.center,
               readOnly: true,
-              onTap: () {
-                showDatePicker(
+              onTap: () async {
+                DateTime? newDate = await showDatePicker(
                     context: context,
                     initialDate: DateTime.now(),
                     firstDate: DateTime.now(),
                     lastDate: DateTime.now().add(const Duration(days: 365)));
+
+                if (newDate != null) {
+                  setState(() {
+                    dateController.text =
+                        DateFormat('dd/MM/yyyy').format(newDate);
+                  });
+                }
               },
               decoration: InputDecoration(
                   filled: true,
