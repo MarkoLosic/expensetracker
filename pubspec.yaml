@@ -28,6 +28,15 @@ flutter:
   uses-material-design: true
 
 assets: 
-  assets/
+  -assets/car.png
+  -assets/diet.png
+  -assets/education.png
+  -assets/flats.png
+  -assets/laundry.png
+  -assets/pawprint.png
+  -assets/playtime.png
+  -assets/renovation.png
+  -assets/responsive.png
+  -assets/travel.png
 
   

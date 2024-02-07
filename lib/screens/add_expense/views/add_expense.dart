@@ -159,7 +159,9 @@ class _AddExpenseState extends State<AddExpense> {
                                         ),
                                         isExpended
                                             ? Container(
-                                                width: double.infinity,
+                                                width: MediaQuery.of(context)
+                                                    .size
+                                                    .width,
                                                 height: 200,
                                                 decoration: const BoxDecoration(
                                                   color: Colors.white,
@@ -169,15 +171,20 @@ class _AddExpenseState extends State<AddExpense> {
                                                               Radius.circular(
                                                                   12)),
                                                 ),
-
                                                 child: ListView.builder(
-                                                itemCount: ,
-                                                itemBuilder: (context, int i) {
-
-                                                }
-                                                ),
-                                                )
-
+                                                    itemCount: myCategoriesIcons
+                                                        .length,
+                                                    itemBuilder:
+                                                        (context, int i) {
+                                                      return Container(
+                                                        width: 50,
+                                                        height: 50,
+                                                        decoration: BoxDecoration(
+                                                            image: DecorationImage(
+                                                                image: AssetImage(
+                                                                    'assets/${myCategoriesIcons[i]}.png'))),
+                                                      );
+                                                    }),
                                               )
                                             : Container(),
                                         const SizedBox(
