@@ -16,6 +16,19 @@ class _AddExpenseState extends State<AddExpense> {
   TextEditingController dateController = TextEditingController();
   DateTime selectDate = DateTime.now();
 
+  List<String> myCategoriesIcons = [
+    'car',
+    'diet',
+    'education',
+    'flats',
+    'laundry',
+    'pawprint',
+    'playtime',
+    'renovation',
+    'responsive',
+    'travel'
+  ];
+
 //Adding format for the time so it copuld be automaticly seted
 
   @override
@@ -156,6 +169,15 @@ class _AddExpenseState extends State<AddExpense> {
                                                               Radius.circular(
                                                                   12)),
                                                 ),
+
+                                                child: ListView.builder(
+                                                itemCount: ,
+                                                itemBuilder: (context, int i) {
+
+                                                }
+                                                ),
+                                                )
+
                                               )
                                             : Container(),
                                         const SizedBox(
