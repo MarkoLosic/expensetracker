@@ -79,6 +79,13 @@ class _AddExpenseState extends State<AddExpense> {
                     size: 16,
                     color: Colors.grey,
                   ),
+                  suffixIcon: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        FontAwesomeIcons.plus,
+                        size: 16,
+                        color: Colors.grey,
+                      )),
                   hintText: 'Kategorija',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
