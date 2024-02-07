@@ -24,9 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
         child: BottomNavigationBar(
-            onTap: (value) {
-              print(value);
-            },
+            onTap: (value) {},
             backgroundColor: Colors.white,
             showSelectedLabels: false,
             showUnselectedLabels: false,

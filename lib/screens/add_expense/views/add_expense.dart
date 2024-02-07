@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
@@ -88,58 +89,95 @@ class _AddExpenseState extends State<AddExpense> {
                         showDialog(
                             context: context,
                             builder: (ctx) {
-                              return AlertDialog(
-                                title: const Text('Kreiraj novu kategoriju'),
-                                content: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      TextFormField(
-                                        //controller: dateController,
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: Colors.white,
-                                            hintText: 'Ime',
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                                borderSide: BorderSide.none)),
-                                      ),
-                                      const SizedBox(
-                                        height: 16,
-                                      ),
-                                      TextFormField(
-                                        //controller: dateController,
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: Colors.white,
-                                            hintText: 'Izaberi ikonu',
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                                borderSide: BorderSide.none)),
-                                      ),
-                                      const SizedBox(
-                                        height: 16,
-                                      ),
-                                      TextFormField(
-                                        //controller: dateController,
-                                        textAlignVertical:
-                                            TextAlignVertical.center,
-                                        decoration: InputDecoration(
-                                            filled: true,
-                                            fillColor: Colors.white,
-                                            hintText: 'Izaberi boju',
-                                            border: OutlineInputBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                                borderSide: BorderSide.none)),
-                                      ),
-                                    ]),
-                              );
+                              bool isExpended = false;
+                              return StatefulBuilder(
+                                  builder: ((context, setState) {
+                                return AlertDialog(
+                                  title: const Text('Kreiraj novu kategoriju'),
+                                  content: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        TextFormField(
+                                          //controller: dateController,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          decoration: InputDecoration(
+                                              isDense: true,
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              hintText: 'Ime',
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  borderSide: BorderSide.none)),
+                                        ),
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
+                                        TextFormField(
+                                          //Added new functionality so the modal is extended
+                                          onTap: () {
+                                            setState(() {
+                                              isExpended = !isExpended;
+                                            });
+                                          },
+                                          readOnly: true,
+                                          //controller: dateController,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          decoration: InputDecoration(
+                                              isDense: true,
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              suffixIcon: const Icon(
+                                                CupertinoIcons.chevron_down,
+                                                size: 12,
+                                              ),
+                                              hintText: 'Izaberi ikonu',
+                                              border: OutlineInputBorder(
+                                                  borderRadius: isExpended
+                                                      ? const BorderRadius
+                                                          .vertical(
+                                                          top: Radius.circular(
+                                                              12))
+                                                      : BorderRadius.circular(
+                                                          12),
+                                                  borderSide: BorderSide.none)),
+                                        ),
+                                        isExpended
+                                            ? Container(
+                                                width: double.infinity,
+                                                height: 200,
+                                                decoration: const BoxDecoration(
+                                                  color: Colors.white,
+                                                  borderRadius:
+                                                      BorderRadius.vertical(
+                                                          bottom:
+                                                              Radius.circular(
+                                                                  12)),
+                                                ),
+                                              )
+                                            : Container(),
+                                        const SizedBox(
+                                          height: 16,
+                                        ),
+                                        TextFormField(
+                                          //controller: dateController,
+                                          textAlignVertical:
+                                              TextAlignVertical.center,
+                                          decoration: InputDecoration(
+                                              isDense: true,
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              hintText: 'Izaberi boju',
+                                              border: OutlineInputBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(30),
+                                                  borderSide: BorderSide.none)),
+                                        ),
+                                      ]),
+                                );
+                              }));
                             });
                       },
                       icon: const Icon(

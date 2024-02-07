@@ -1,5 +1,4 @@
 import 'package:expensetracker/stats/chart.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -23,9 +22,9 @@ class StatScreen extends StatelessWidget {
               height: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(12)),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(12, 20, 12, 20),
-                child: const MyChart(),
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(12, 20, 12, 20),
+                child: MyChart(),
               ),
             )
           ],
