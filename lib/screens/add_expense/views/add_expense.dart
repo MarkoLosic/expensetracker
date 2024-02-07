@@ -139,9 +139,9 @@ class _AddExpenseState extends State<AddExpense> {
                                                       ? const BorderRadius
                                                           .vertical(
                                                           top: Radius.circular(
-                                                              12))
+                                                              30))
                                                       : BorderRadius.circular(
-                                                          12),
+                                                          30),
                                                   borderSide: BorderSide.none)),
                                         ),
                                         isExpended
